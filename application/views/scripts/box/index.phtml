@@ -1,0 +1,45 @@
+<p><a href="<?php echo $this->url(array('controller' => 'box','action' => 'create'),'default',true) ?>"><button>Box Anlageformular</button></a></p>
+
+<table style="width:100%" border="0">
+	<tr>
+		<td style="width:20%;"></td>
+		<td style="width:60%;">
+			<table style="width:100%">
+				<tr>
+					<td>
+						<h3>Box-Eintr&auml;ge</h3>
+					</td>
+				</tr>			
+			</table>
+			<table style="width:100%;" border="1">
+				<tr>
+					<td><b>Box-Nr.</b></td>
+					<td><b>Ort</b></td>
+					<td>&nbsp;</td>
+				</tr>			
+			    <?php foreach ($this->entries as $entry): ?>
+                <tr>
+                	<td style="width:42%;">
+                		<?php echo $this->escape($entry->boxNo) ?>
+                	</td>
+                	<td style="width:42%;">
+                		<?php echo $this->escape($entry->boxPlace) ?>               	
+                	</td>
+                	
+                	<td style="width:16%;text-align:center;">
+                		<!-- Einzelnen Datensatz anzeigen -->
+                		<a href="<?= $this->url(array('controller' => 'box', 'action' => 'show', 'id' => $this->escape($entry->boxID))) ?>"><button>detail</button></a>
+                		                		                		
+                		<!-- Datensatz bearbeiten/editieren -->
+                		<a href="<?= $this->url(array('controller' => 'box', 'action' => 'edit', 'id' => $this->escape($entry->boxID))) ?>"><button>edit</button></a>                		
+                		
+                		<!-- Datensatz loeschen -->
+                		<a href="<?= $this->url(array('controller' => 'box', 'action' => 'deleteinfo', 'id' => $this->escape($entry->boxID))) ?>"><button>delete</button></a>                		                		
+                	</td>
+                </tr>                    
+                <?php endforeach ?>
+			</table>
+		</td>
+		<td style="width:20%;"></td>
+	</tr>
+</table>

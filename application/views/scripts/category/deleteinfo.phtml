@@ -1,0 +1,11 @@
+<!--
+<p><a href="<?php echo $this->url(array('controller' => 'category','action' => 'index'),'default',true) ?>">Kategorie &Uuml;bersicht</a></p>
+-->
+
+<h3>[-Ausgew&auml;hlte Kategorie l&ouml;schen-]</h3>
+
+<p><b>ID:</b>&nbsp;<?= $this->entry['catID'] ?></p>
+<p><b>Name:</b>&nbsp;<?= $this->entry['catName'] ?></p>
+<p><b>Beschreibung:</b>&nbsp;<?= $this->entry['catDescription'] ?></p>
+
+<p><a href="<?= $this->url(array('controller' => 'category', 'action' => 'delete', 'id' => $this->entry['catID'])) ?>"><button>Ausgew&auml;hlte Kategorie l&ouml;schen</button></a></p>

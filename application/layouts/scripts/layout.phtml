@@ -1,0 +1,79 @@
+<html>
+
+<head>
+	<title>Flex-Storage</title>
+</head>
+
+<body>
+
+<style>
+    a:link,
+    a:visited
+    {
+        color: #0398CA;
+    }
+
+    span#copy-right {
+        font-size: 12px;
+    }
+
+    span#tool-name {
+        color: #000000;
+        font-weight: bold;       
+        font-size: 20px; 
+    }
+
+    div#welcome {
+        color: #FFFFFF;
+        background-image: url(http://framework.zend.com/images/bkg_header.jpg);
+        width:  600px;
+        height: 200px;
+        border: 2px solid #444444;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    div#more-information {
+        background-image: url(http://framework.zend.com/images/bkg_body-bottom.gif);
+        height: 100%;
+    }
+</style>
+
+<div id="header" style="background-color: #EEEEEE; height: 60px;">
+
+	<!-- Navi nicht auf der index-Seite anzeigen -->
+    <?php if($this->url() != '/'){?> 
+        <div id="header-logo" style="text-align:center">
+            <span id="tool-name">Flex-Storage</span>	
+        </div>    
+   
+        <div id="header-navigation" style="float: left">
+           	&nbsp;
+            <a href="<?php echo $this->url(array('controller'=>'item'),'default',true) ?>"><button>Item-&Uuml;bersicht</button></a>        
+            &nbsp;
+            <a href="<?php echo $this->url(array('controller'=>'box'),'default',true) ?>"><button>Box-&Uuml;bersicht</button></a>
+            &nbsp;
+            <a href="<?php echo $this->url(array('controller'=>'category'),'default',true) ?>"><button>Kategorie-&Uuml;bersicht</button></a>
+        </div>        
+    <?php } ?>
+</div>
+
+
+    <!-- Eigentlicher Inhalt
+    ++++++ -->
+    <?php echo $this->layout()->content; ?>
+    
+    <?php if($this->url() != '/'){?>
+    	<br><br>
+    <?php } ?>
+
+
+<div id="footer" style="background-color: #EEEEEE; height: 60px;">
+    <div id="footer-logo" style="float: right;">
+        <span id="copy-right">&copy;MB Business Software GmbH</span>
+    </div>
+</div>
+
+</body>
+
+</html>

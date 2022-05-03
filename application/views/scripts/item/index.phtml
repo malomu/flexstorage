@@ -1,0 +1,66 @@
+<p><a href="<?php echo $this->url(array('controller' => 'item','action' => 'create'),'default',true) ?>"><button>Item Anlageformular</button></a></p>
+
+<table style="width:100%" border="0">
+	<tr>
+		<td style="width:10%;"></td>
+		<td style="width:80%;">
+			<table style="width:100%">
+				<tr>
+					<td>
+						<h3>Item-Eintr&auml;ge</h3>
+					</td>
+				</tr>			
+			</table>
+			<table style="width:100%;" border="1">
+				<tr>
+					<td><b>Titel</b></td>
+					<td><b>Beschreibung</b></td>
+					<td><b>Kategorie</b></td>
+					<td><b>Box</b></td>
+					<td><b>Ort</b></td>
+					<td>&nbsp;</td>
+				</tr>
+			    <?php foreach ($this->entries as $entry): ?>
+                <tr>
+                	<!-- Item-Titel -->
+                	<td style="width:27%;">
+                		<?php echo $this->escape($entry->iteTitle) ?>
+                	</td>
+                	
+                	<!-- Item-Beschreibung -->
+                	<td style="width:27%;">
+                		<?php echo $this->escape($entry->iteDescription) ?>               	
+                	</td>
+                	
+                	<!-- Kategorie-Name -->
+                	<td style="width:11%;">
+                		<?php echo $this->escape($entry->catName) ?>
+                	</td>
+                	
+                	<!-- Box-Nr. -->
+                	<td style="width:11%;">
+                		<?php echo $this->escape($entry->boxNo) ?>
+                	</td>
+                	
+                	<!-- Box-Ort -->
+                	<td style="width:11%;">
+                		<?php echo $this->escape($entry->boxPlace) ?>
+                	</td>
+                	
+                	<td style="width:13%;text-align:center;">
+                		<!-- Einzelnen Datensatz anzeigen -->
+                		<a href="<?= $this->url(array('controller' => 'item', 'action' => 'show', 'id' => $this->escape($entry->iteID))) ?>"><button>detail</button></a>
+                		                		                		
+                		<!-- Datensatz bearbeiten/editieren -->
+                		<a href="<?= $this->url(array('controller' => 'item', 'action' => 'edit', 'id' => $this->escape($entry->iteID))) ?>"><button>edit</button></a>                		
+                		
+                		<!-- Datensatz loeschen -->
+                		<a href="<?= $this->url(array('controller' => 'item', 'action' => 'deleteinfo', 'id' => $this->escape($entry->iteID))) ?>"><button>delete</button></a>                		                		
+                	</td>
+                </tr>                    
+                <?php endforeach ?>
+			</table>
+		</td>
+		<td style="width:10%;"></td>
+	</tr>
+</table>

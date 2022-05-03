@@ -1,0 +1,9 @@
+<h3>[-Ausgew&auml;hltes Item l&ouml;schen-]</h3>
+
+<p><b>ID:</b>&nbsp;<?= $this->entry['iteID'] ?></p>
+<p><b>Titel:</b>&nbsp;<?= $this->entry['iteTitle'] ?></p>
+<p><b>Beschreibung:</b>&nbsp;<?= $this->entry['iteDescription'] ?></p>
+<p><b>Kategorie-DropDown:</b>&nbsp;<?= $this->entry['catID'] ?></p>
+<p><b>Box-DropDown:</b>&nbsp;<?= $this->entry['boxID'] ?></p>
+
+<p><a href="<?= $this->url(array('controller' => 'item', 'action' => 'delete', 'id' => $this->entry['iteID'])) ?>"><button>Ausgew&auml;hltes Item l&ouml;schen</button></a></p>

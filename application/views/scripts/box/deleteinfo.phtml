@@ -1,0 +1,12 @@
+<h3>[-Ausgew&auml;hlte Box l&ouml;schen-]</h3>
+
+<p><b>ID:</b>&nbsp;<?= $this->entry['boxID'] ?></p>
+<p><b>Nr:</b>&nbsp;<?= $this->entry['boxNo'] ?></p>
+<p><b>Breite:</b>&nbsp;<?= $this->entry['boxWidth'] ?></p>
+<p><b>Höhe:</b>&nbsp;<?= $this->entry['boxHeight'] ?></p>
+<p><b>Tiefe:</b>&nbsp;<?= $this->entry['boxDepth'] ?></p>
+<p><b>Ort:</b>&nbsp;<?= $this->entry['boxPlace'] ?></p>
+<p><b>Anlage-Datum:</b>&nbsp;<?= $this->entry['boxCreateDate'] ?></p>
+<p><b>&Uuml;bergeordneten Box:</b>&nbsp;<?= $this->entry['boxParentBoxID'] ?></p>
+
+<p><a href="<?= $this->url(array('controller' => 'box', 'action' => 'delete', 'id' => $this->entry['boxID'])) ?>"><button>Ausgew&auml;hlte Box l&ouml;schen</button></a></p>
